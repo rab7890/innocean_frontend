@@ -92,8 +92,10 @@ sap.ui.define([
         },
 
 		onSuggest: function (event) {                       // searchField에 걸려있는 filter -> searchField에 text입력시 filter를 걸어주는 이벤트
+			/*
 			var sValue = event.getParameter("suggestValue"),
 				aFilters = [];
+
 			if (sValue) {
 				aFilters = [
 					new Filter([
@@ -108,14 +110,14 @@ sap.ui.define([
 			}
 
 			this.oSF.getBinding("suggestionItems").filter(aFilters);
-			this.oSF.suggest();
+			this.oSF.suggest();*/
         },        
         
 
-        onSearch: function (){                            // SearchField 눌렀을 때 발생하는 action
+        onSearch: function (oEvent){                            // SearchField 눌렀을 때 발생하는 action
 
 
-               sap.ui.controller("portal.controller.Anchor").custom_search();
+               sap.ui.controller("portal.controller.Anchor").search(oEvent);
 
         },       
         
