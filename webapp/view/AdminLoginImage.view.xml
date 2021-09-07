@@ -1,0 +1,108 @@
+<mvc:View
+	controllerName="portal.controller.AdminLoginImage"
+	xmlns="sap.m"
+	xmlns:f="sap.f" 
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified"
+	xmlns:mvc="sap.ui.core.mvc">
+    
+	<f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+
+<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="로그인 배경 관리"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+        
+            <f:header>
+				<f:DynamicPageHeader pinnable="false">
+					<f:content>
+                        <VBox>
+					        <Text text="* 등록된 이미지는 로그인 페이지에서 랜덤으로 노출됩니다."/>
+					        <Text text="* 사용중인 이미지를 최대 10개로 제한합니다."/>
+                        </VBox>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+
+<!-- DynamicPage Content -->
+		<f:content>
+            <VBox>
+				<Table
+					id="Image"
+					inset="false"
+					items="{ path: '/Logo',
+			                sorter: {
+			                	path: 'Name'
+			                    }
+					        }"
+					class="sapFDynamicPageAlignContent"
+					width="auto">
+					<columns>
+						<Column width="30%">
+							<Text text="이미지"/>
+						</Column>			
+                        <Column width="30%">
+				            <Text text="사용여부" />
+			            </Column>
+						<Column>
+							<Text text="비고"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem press=".onListItemPress">
+							<cells>
+								<Image src="image/{Image}.jpg" width="50%"/>
+							    <Select>
+								    <core:Item text="Yes"/>
+								    <core:Item text="No"/>
+                                </Select>
+					            <Button text="삭제" />
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+				<OverflowToolbar class="sapFDynamicPageAlignContent">
+					<ToolbarSpacer/>
+				</OverflowToolbar>
+                <HBox>
+		        <u:FileUploader
+        			id="fileUploader"
+		        	name="myFileUpload"
+			        uploadUrl="upload/"
+			        tooltip="Upload your file to the local server"
+        			uploadComplete="handleUploadComplete"
+        			change="handleValueChange"
+        			typeMissmatch="handleTypeMissmatch"
+        			style="Emphasized"
+        			fileType="png,jpg"
+        			placeholder="이미지를 선택하세요...">
+        				<u:parameters>
+        					<u:FileUploaderParameter
+        						name="Accept-CH"
+        						value="Viewport-Width"/>
+        					<u:FileUploaderParameter
+        						name="Accept-CH"
+        						value="Width"/>
+        					<u:FileUploaderParameter
+        						name="Accept-CH-Lifetime"
+        						value="86400"/>
+            				</u:parameters>
+            			</u:FileUploader>
+            		<Button
+            			text="배경 추가"
+            			press="handleUploadPress"/>
+                    </HBox>
+                    
+				<OverflowToolbar class="sapFDynamicPageAlignContent">
+					<ToolbarSpacer/>
+					    <Button text="저장" type="Emphasized" press=".onAdd"/>
+				</OverflowToolbar>
+                </VBox>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

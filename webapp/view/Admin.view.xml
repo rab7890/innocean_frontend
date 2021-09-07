@@ -1,0 +1,27 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.uxap"
+    xmlns:m="sap.m"
+    xmlns:f="sap.f"
+    xmlns:blocks="portal.controller.Admin"
+    height="100%">
+
+<!--Main 화면에서 여러 View 띄우기-->
+    <ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false" showHeaderContent="false">
+        <sections>
+            <ObjectPageSection titleUppercase="false" id="section1" title="권한 관리" showTitle="true">      
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <mvc:XMLView viewName="portal.view.tiles.adminGroup1"/>                  <!--즐겨찾기 부분에 tileGroup1.view 호출-->
+                    </ObjectPageSubSection>    
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection titleUppercase="false" id="section2" title="지원">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <mvc:XMLView viewName="portal.view.tiles.adminGroup2"/>                  <!--타임 관리 부분에 tileGroup2.view 호출-->
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+        </sections>
+    </ObjectPageLayout>
+</mvc:View>

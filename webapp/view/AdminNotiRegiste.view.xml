@@ -1,0 +1,52 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:Control="sap.ui.core.Control" 
+    xmlns="sap.m" 
+    xmlns:f="sap.f"
+    xmlns:l="sap.ui.layout" 
+	xmlns:u="sap.ui.unified"
+    xmlns:core="sap.ui.core" 
+    controllerName="portal.controller.AdminNotiRegiste" 
+    displayBlock="true">
+	
+	<l:VerticalLayout id="adminNotice" class="sapUiContentPadding" width="100%">
+        <VBox>
+                <Label text="제목 : " labelFor="idSelect" class="sapUiSmallMarginEnd"/>
+                <Input id="notiTitle" width="100%" maxLength="300"/>
+        </VBox>
+	</l:VerticalLayout>
+    <VBox>
+        <HBox>
+		        <u:FileUploader
+        			id="fileUploader"
+		        	name="myFileUpload"
+			        uploadUrl="upload/"
+			        tooltip="Upload your file to the local server"
+        			uploadComplete="handleUploadComplete"
+        			change="handleValueChange"
+        			typeMissmatch="handleTypeMissmatch"
+        			style="Emphasized"
+        			fileType="png,jpg"
+        			placeholder="파일을 선택하세요...">
+        				<u:parameters>
+        					<u:FileUploaderParameter
+        						name="Accept-CH"
+        						value="Viewport-Width"/>
+        					<u:FileUploaderParameter
+        						name="Accept-CH"
+        						value="Width"/>
+        					<u:FileUploaderParameter
+        						name="Accept-CH-Lifetime"
+        						value="86400"/>
+            				</u:parameters>
+            			</u:FileUploader>
+            		<Button
+            			text="파일 등록"
+            			press="handleUploadPress"/>
+        </HBox>
+			<OverflowToolbar>
+					<ToolbarSpacer/>
+					    <Button text="저장" type="Emphasized" press=".onAdd"/>
+            </OverflowToolbar>
+    </VBox>
+</mvc:View>

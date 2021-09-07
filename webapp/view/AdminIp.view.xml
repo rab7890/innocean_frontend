@@ -1,0 +1,74 @@
+<mvc:View xmlns:tnt="sap.tnt" 
+    xmlns="sap.m" 
+    xmlns:f="sap.f" 
+    xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    controllerName="portal.controller.AdminIp">
+	
+    <f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="내부IP 관리"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+        
+            <f:header>
+				<f:DynamicPageHeader pinnable="false">
+				</f:DynamicPageHeader>
+			</f:header>
+<!-- DynamicPage Content -->
+		<f:content>
+			<VBox fitContainer="true">
+				<OverflowToolbar class="sapFDynamicPageAlignContent">
+					<ToolbarSpacer/>
+					    <Button text="등록" type="Emphasized" press=".onAdd"/>
+				</OverflowToolbar>
+				<Table id="MenuTable" inset="false" items="{ path: '/Menu', sorter: { path: 'Rank'}}" class="sapFDynamicPageAlignContent" width="auto">
+					<columns>
+                        <Column width="15rem">
+				            <Text text="IP 범위"/>
+			            </Column>
+						<Column width="1rem">
+							<Text text=""/>
+						</Column>
+						<Column width="15rem">
+							<Text text=""/>
+						</Column>
+						<Column width="4rem">
+							<Text text=""/>
+						</Column>
+						<Column width="2rem">
+							<Text text=""/>
+						</Column>
+						<Column width="2rem">
+							<Text text=""/>
+						</Column>
+						<Column hAlign="End" width="20%">
+							<Text text=""/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem press=".onListItemPress">
+							<cells>
+					            <Input value="{Korean}"/>
+					            <Text text="~"/>
+					            <Input value="{English}"/>
+							    <!--<Select selectedKey="{Category}" items="{/Menu}">
+								    <core:Item text="{Yes}" key="{Name}"/>
+								    <core:Item text="{No}" key="{Name}"/>
+							    </Select>-->
+                                <Text text=""/>
+                                <Button text="저장" type="Emphasized"/>
+                                <Button text="삭제" type="Emphasized"/>
+                                <Text text=""/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+            </VBox>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

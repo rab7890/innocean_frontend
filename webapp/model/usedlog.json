@@ -1,0 +1,117 @@
+{
+
+   "Usedlog": [
+		{
+			"Datetime": "2021.08.14 13:13:24",
+			"Name": "박종원 JONG WON PARK",
+            "LoginID": "219033",
+            "Url": "로그인",
+            "TypeIP": "PC 39.118.151.145",
+            "Authority": " ",
+            "DownLoadFile": " ",
+            "Category": "정직원",
+            "OutSide":"PC",
+            "Employee":"Yes"
+        },
+        {
+			"Datetime": "2021.08.09 09:22:23",
+			"Name": "이동원 DONG YUN LEE",
+            "LoginID": "220056",
+            "Url": "로그인",
+            "TypeIP": "PC 10.242.25.137",
+            "Authority": " ",
+            "DownLoadFile": " ",
+            "Category": "이사",
+            "OutSide":"PC",
+            "Employee":"Yes"
+        },
+        {
+			"Datetime": "2021.08.11 07:47:21",
+			"Name": "이혁순 HYUK SOON LEE",
+            "LoginID": "219048",
+            "Url": "로그인",
+            "TypeIP": "PC 10.242.24.137",
+            "Authority": " ",
+            "DownLoadFile": " ",
+            "Category":"인턴",
+            "OutSide":"Moblie",
+            "Employee":"Yes"
+        },
+        {
+			"Datetime": "2021.08.04 07:29:04",
+			"Name": "이기혁 KI HYUK LEE",
+            "LoginID": "213017",
+            "Url": "로그인",
+            "TypeIP": "MOBILE 211.212.106.183",
+            "Authority": " ",
+            "DownLoadFile": " ",
+            "Category":"인턴",
+            "OutSide":"NoteBook",
+            "Employee":"Yes"
+        },
+        {
+			"Datetime": "2021.08.02 21:11:16",
+			"Name": "이용수 YONG SOO LEE",
+            "LoginID": "220069",
+            "Url": "로그인",
+            "TypeIP": "W 117.111.10.114",
+            "Authority": " ",
+            "DownLoadFile": " ",
+            "Category":"정직원",
+            "OutSide":"NoteBook",
+            "Employee":"Yes"
+        },
+        {
+			"Datetime": "2021.08.11 09:55:49",
+			"Name": "정지선 JI SUN JEONG",
+            "LoginID": "320009",
+            "Url": "로그인",
+            "TypeIP": "PC 61.78.88.99",
+            "Authority": " ",
+            "DownLoadFile": " ",
+            "Category":"이사",
+            "OutSide":"Tablet",
+            "Employee":"Yes"
+        },
+        {
+			"Datetime": "2021.08.03 10:53:00",
+			"Name": "조인희 IN HEE CHO",
+            "LoginID": "218065",
+            "Url": "gsing/drafting/main/DraftingMain/completeDrafting.do",
+            "TypeIP": "PC 10.242.24.110",
+            "Authority": " ",
+            "DownLoadFile": " ",
+            "Category":"인턴",
+            "OutSide":"Tablet",
+            "Employee":"Yes"
+        },
+        {
+			"Datetime": "2021.08.17 13:27:21",
+			"Name": "김민경 MIN GYEONG KIM",
+            "LoginID": "217009",
+            "Url": "로그인",
+            "TypeIP": "PC 10.242.24.219",
+            "Authority": " ",
+            "DownLoadFile": " ",
+            "Category":"정직원",
+            "OutSide":"PC",
+            "Employee":"Yes"
+        },
+        {
+			"Datetime": "2021.08.19 07:19:44",
+			"Name": "테스트1",
+            "LoginID": "616011",
+            "Url": "로그인",
+            "TypeIP": "PC 10.6.180.162",
+            "Authority": " ",
+            "DownLoadFile": " ",
+            "Category":"정직원",
+            "OutSide":"PC",
+            "Employee":"Yes"
+        
+        }
+   ]
+
+}
+
+

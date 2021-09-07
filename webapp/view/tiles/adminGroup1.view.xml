@@ -1,0 +1,57 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    controllerName="portal.controller.tiles.adminGroup1"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    height="100%" 
+    displayBlock="true">
+
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="역할별 타일지정" 
+		press="press1" frameType= "OneByOne">
+        <TileContent>
+            <ImageContent src="sap-icon://activities" />
+        </TileContent>
+	</GenericTile>
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="사용자별 타일지정"
+		press="press2" frameType= "OneByOne">
+        <TileContent>
+            <ImageContent src="sap-icon://activities" />
+        </TileContent>
+	</GenericTile>
+
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="일별 사이트 사용현황"
+		press="press3" frameType= "OneByOne">
+        <TileContent>
+            <ImageContent src="sap-icon://activities" />
+        </TileContent>
+	</GenericTile>
+
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="모바일 기기 접속 관리"
+		press="press4" frameType= "OneByOne">
+        <TileContent>
+            <ImageContent src="sap-icon://activities" />
+        </TileContent>
+	</GenericTile>
+
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="사용자 관리"
+		press="press5" frameType= "OneByOne">
+        <TileContent>
+            <ImageContent src="sap-icon://activities" />
+        </TileContent>
+	</GenericTile>
+
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="사용내역(로그) 검색"
+		press="press6" frameType= "OneByOne">
+        <TileContent>
+            <ImageContent src="sap-icon://activities" />
+        </TileContent>
+	</GenericTile>
+
+
+</mvc:View>

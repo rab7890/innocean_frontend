@@ -1,0 +1,57 @@
+<mvc:View
+    controllerName="portal.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+	xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+    height="100%"
+>
+
+<tnt:ToolPage id="toolPage" sideExpanded="false">
+
+<!--tool header-->
+	<tnt:header>
+		<tnt:ToolHeader>
+            <tnt:content>
+            	<Button icon="sap-icon://menu2" type="Transparent" id="sideNavigationToggleButton" press=".onSideNavButtonPress"/>       <!--sideNav 버튼-->
+                    <Text wrapping="false" text="업무포탈"/>
+			        <ToolbarSpacer></ToolbarSpacer>  
+		        <SearchField id="searchField" width="20%" placeholder="Search for..." enableSuggestions="true" search=".onSearch" suggest=".onSuggest"
+    		    	suggestionItems="{
+    			    	path: '/tile',
+    				    sorter: { path: 'content' }
+    			    }">
+			        <SuggestionItem key="{TileId}" text="{Name}" />             <!--model/Tile.json안에 Name 데이터 바인딩-->
+		        </SearchField>
+                <Button icon="sap-icon://notification-2" type="Transparent" id="notiButton" press=".onNotiButtonPress"/>            <!--공지사항 버튼-->
+                <Button icon="sap-icon://sys-help" type="Transparent" id="faqButton" press=".onFaqButtonPress"/>                    <!--FAQ 버튼-->
+		        <Button text="회계팀 김현근" type="Transparent" id="userpress" press=".onUserNamePress"/>                         <!--로그인 됐을 시 해당 회원 이름-->
+            </tnt:content>
+		</tnt:ToolHeader>
+	</tnt:header>
+
+<!--side Nav-->
+	<tnt:sideContent>
+			<tnt:SideNavigation expanded="true" itemSelect=".onItemSelect">
+				<tnt:NavigationList items="{path: '/tile', templateShareable:false}">
+					<tnt:NavigationListItem text="{anchorbar_code_text}" icon="sap-icon://appointment" enabled="{enabled}" expanded="{expanded}" items="{path:'tiles', templateShareable:false}">
+						<tnt:NavigationListItem text="{tile_code_text}" enabled="{enabled}"/>
+					</tnt:NavigationListItem>
+				</tnt:NavigationList>
+				<!--<tnt:fixedItem>
+					<tnt:NavigationList items="{path: '/fixedNavigation'}">
+						<tnt:NavigationListItem text="{name}" icon="{icon}"/>
+					</tnt:NavigationList>
+				</tnt:fixedItem>-->
+			</tnt:SideNavigation>
+	</tnt:sideContent>
+
+<!--Main page-->
+	<tnt:mainContents>	
+        <Page showHeader="false">
+        <App id="maincontent"/>
+        </Page>
+    </tnt:mainContents>
+</tnt:ToolPage>
+</mvc:View>

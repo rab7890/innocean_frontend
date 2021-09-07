@@ -1,0 +1,141 @@
+<mvc:View 
+     xmlns:tnt="sap.tnt" 
+    xmlns="sap.m" 
+    xmlns:f="sap.f" 
+    xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+	xmlns:fb="sap.ui.comp.filterbar"
+    controllerName="portal.controller.AdminUserManage">
+	<f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+
+<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="사용자 관리"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+        
+
+			<!-- DynamicPage Content -->
+		<f:header>
+			
+            <f:DynamicPageHeader pinnable="true">
+					<f:content>
+						<fb:FilterBar id="filterbar" reset="onReset" search="onSearch" useToolbar="false" showGoOnFB="false" showFilterConfiguration="false">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem groupName="group1" name="A" label="조직" visibleInFilterBar="true">
+									<fb:control>
+										<Select
+										id="seUrl"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Usermanage'
+                                                }">
+										<core:Item key="{key}" text="{Department}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterGroupItem>								
+								<fb:FilterGroupItem  groupName="group2" name="B" label="사번" visibleInFilterBar="true">
+									<fb:control>
+										<Select
+										id="seCatagory"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Usermanage'
+                                                 }">
+										<core:Item key="{key}" text="{UserId}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterGroupItem>		
+				<fb:FilterGroupItem groupName="group3" name="C" label="성명" partOfCurrentVariant="true" visibleInFilterBar="true">
+					<fb:control>
+							<Select
+										id="seMenu"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Usermanage'
+                                                 }">
+										<core:Item key="{key}" text="{User}"/>
+										</Select>
+					</fb:control>
+				</fb:FilterGroupItem>
+				
+                            <fb:FilterGroupItem groupName="group4" name="C" label="직원 여부" partOfCurrentVariant="true" visibleInFilterBar="true">
+					<fb:control>
+							<Select
+										id="seName"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Usermanage'
+                                                 }">
+										<core:Item key="{key}" text="{Employee}"/>
+										</Select>
+					</fb:control>
+				</fb:FilterGroupItem>
+							
+                         
+					</fb:filterGroupItems>		
+							
+						</fb:FilterBar>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+            <f:content>
+              
+			<VBox fitContainer="true">
+				<OverflowToolbar class="sapFDynamicPageAlignContent">
+					<ToolbarSpacer/>
+				    <Button text="엑셀 저장" type="Emphasized"/>
+				</OverflowToolbar>
+	                
+				    
+				<Table id="AdminUserManage" inset="false" items="{ path: '/Usermanage', sorter: { path: 'Date'}}" class="sapFDynamicPageAlignContent" width="auto">
+					<columns>
+                        <Column>
+				            <Text text="성명/영문명"/>
+			            </Column>
+						<Column>
+							<Text text="이메일"/>
+						</Column>
+						<Column>
+							<Text text="사번"/>
+						</Column>
+						<Column>
+							<Text text="부서"/>
+						</Column>
+						<Column>
+							<Text text="내/외부"/>
+						</Column>
+						<Column>
+							<Text text="직급"/>
+						</Column>
+                        <Column>
+							<Text text="재직상태"/>
+						</Column>
+                        <Column>
+							<Text text=""/>
+						</Column>
+                        
+					</columns>
+					<items>
+						<ColumnListItem press=".onListItemPress">
+							<cells>   
+					            <Text text="{User}"/>
+					            <Text text="{Email}"/>
+					            <Text text="{UserId}"/>
+					            <Text text="{Department}"/>
+					            <Text text="{InnerOuter}"/>
+					            <Text text="{Status}"/>
+					            <Text text="{Status}"/>
+					            <Button text="사용자 관리" id="manage" press="managePress"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

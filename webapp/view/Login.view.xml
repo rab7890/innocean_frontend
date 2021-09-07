@@ -1,0 +1,90 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m" 
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:core="sap.ui.core" 
+    controllerName="portal.controller.Login" 
+    displayBlock="true"
+>
+	<App id="app">
+		<pages>
+			<Page id="page" showHeader="false">
+                <content>
+                    <form:Form width="auto" editable="true" visible="true" class="sapUiResponsiveMargin">
+                      <form:layout>
+                            <form:ResponsiveGridLayout 
+                                labelSpanXL="4"
+                                labelSpanL="3"
+                                labelSpanM="3"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="5"
+                                emptySpanL="2"
+                                emptySpanM="2"
+                                emptySpanS="0"
+                                singleContainerFullSize="true"/>
+                        </form:layout>
+                        <form:formContainers>
+                            <form:FormContainer visible="true">
+                                <form:formElements>
+                                    <form:FormElement visible="true" class="sapUiResponsiveMargin">
+                                        <form:label>
+                                            <Label text="" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="false"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Image src="" height="68px" width="310px" visible="true" densityAware="false"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement visible="true" class="sapUiResponsiveMargin">
+                                        <form:label>
+                                            <Label text="" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="false"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Image src="image/logo.png" height="auto" width="100%" visible="true" densityAware="false"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement visible="true" class="sapUiResponsiveMargin">
+                                        <form:label>
+                                            <Label text="사원번호" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                        <Input id="Input1" value="{/id}" type="Number" enabled="true" visible="true" width="auto" required="true" valueStateText="Invalid entry" maxLength="20" submit="onButtonPress"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement visible="true" class="sapUiResponsiveMargin">
+                                        <form:label>
+                                            <Label text="비밀번호" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Input id="Input2" value="{/password}" placeholder="*********" type="Password" enabled="true" visible="true" width="auto" required="true" valueStateText="Invalid entry" maxLength="20"  submit="onButtonPress"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement visible="true" class="sapUiResponsiveMargin">
+                                        <form:label>
+                                            <Label text="" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <CheckBox text="아이디 저장" selected="true" editable="true" enabled="true" visible="true" width="auto" textDirection="Inherit" wrapping="false" useEntireWidth="true"/>
+                                        </form:fields>
+                                        <Select>
+								            <core:Item text="한국어"/>
+								            <core:Item text="English"/>
+							            </Select>
+                                    </form:FormElement>
+                                    <form:FormElement visible="true">
+                                        <form:label>
+                                            <Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="false"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Button text="로그인" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" id="loginButton" press=".onButtonPress" class="buttonColor"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                </form:formElements>
+                            </form:FormContainer>
+                        </form:formContainers>
+                    </form:Form>
+                </content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,25 @@
+/*@media screen
+    { 
+        .sapMGT.OneByOne {
+            width: 9rem !important;
+            height: 9rem;
+        border-color: salmon;
+        }
+    }
+
+@media screen
+    {
+    .sapMGTHdrTxt>.sapMText {
+    font-size: .9rem;
+        }
+    }
+
+@media screen
+{
+    .sapMTileSmallPhone.sapMGT.OneByOne{
+        border-color: salmon;
+        width: 8.8rem !important;
+        height: 8.8rem;
+    }
+}
+*/

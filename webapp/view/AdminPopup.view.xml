@@ -1,0 +1,169 @@
+<mvc:View xmlns:tnt="sap.tnt" 
+    xmlns="sap.m" 
+    xmlns:f="sap.f" 
+    xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+	xmlns:fb="sap.ui.comp.filterbar"
+    controllerName="portal.controller.AdminPopup">
+	
+    <f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="팝업 관리"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+        
+		<f:header>
+		    <f:DynamicPageHeader pinnable="true">
+				<f:content>
+					<fb:FilterBar id="filterbar" reset="onReset" search="onSearch" useToolbar="false" showGoOnFB="false" showFilterConfiguration="false">
+						<fb:filterGroupItems>
+							<fb:FilterGroupItem groupName="group1" name="A" label="제목" visibleInFilterBar="true">
+								<fb:control>
+									<Select
+										id="slName"
+										change="onSelectChange"
+										items="{
+                                                    path: '/List'
+                                                }">
+									<core:Item key="{key}" text="{Name}"/>
+									</Select>
+								</fb:control>				
+							</fb:FilterGroupItem>								
+							<fb:FilterGroupItem  groupName="group2" name="B" label="사용여부" visibleInFilterBar="true">
+								<fb:control>
+									<Select
+			    						id="slResult"
+										change="onSelectChange"
+										items="{
+                                                    path: '/List'
+                                                 }">
+									<core:Item key="{key}" text="{Result}"/>
+									</Select>
+								</fb:control>				
+							</fb:FilterGroupItem>								
+							<fb:FilterGroupItem  groupName="group3" name="B" label="IE전용" visibleInFilterBar="true">
+								<fb:control>
+									<Select
+										id="slResult2"
+										change="onSelectChange"
+										items="{
+                                                    path: '/List'
+                                                 }">
+									<core:Item key="{key}" text="{Result}"/>
+									</Select>
+								</fb:control>				
+							</fb:FilterGroupItem>	
+				            <fb:FilterGroupItem groupName="group3" name="C" label="기간" partOfCurrentVariant="true" visibleInFilterBar="true">
+					            <fb:control>
+						            <DatePicker change="onChange"/>
+					            </fb:control>
+				            </fb:FilterGroupItem>							
+							<fb:FilterGroupItem  groupName="group4" name="B" label="내부직원전용" visibleInFilterBar="true">
+								<fb:control>
+									<Select
+										id="slResult3"
+										change="onSelectChange"
+										items="{
+                                                    path: '/List'
+                                                 }">
+									<core:Item key="{key}" text="{Result}"/>
+									</Select>
+								</fb:control>				
+							</fb:FilterGroupItem>							
+							<fb:FilterGroupItem  groupName="group5" name="B" label="내부IP전용" visibleInFilterBar="true">
+								<fb:control>
+									<Select
+										id="slResult4"
+										change="onSelectChange"
+										items="{
+                                                    path: '/List'
+                                                 }">
+									<core:Item key="{key}" text="{Result}"/>
+									</Select>
+								</fb:control>
+							</fb:FilterGroupItem>                                
+						</fb:filterGroupItems>
+					</fb:FilterBar>
+				</f:content>
+			</f:DynamicPageHeader>
+		</f:header>
+			<!-- DynamicPage Content -->
+		<f:content>
+			<VBox fitContainer="true">
+				<OverflowToolbar class="sapFDynamicPageAlignContent">
+					<ToolbarSpacer/>
+					    <Button text="등록" type="Emphasized" press=".onAdd"/>
+				</OverflowToolbar>
+			<Table
+					id="idProductsTable"
+					inset="false"
+					items="{
+                        path: '/List'
+                    }">
+
+				<columns>
+					<Column
+							minScreenWidth="Tablet"
+							demandPopin="true">
+						<Text text="번호"/>
+					</Column>
+					<Column
+							minScreenWidth="Tablet"
+							demandPopin="true"
+                            width="20rem">
+						<Text text="제목"/>
+					</Column>
+					<Column
+							minScreenWidth="Tablet"
+							demandPopin="true">
+						<Text text="시작일"/>
+					</Column>
+					<Column
+							minScreenWidth="Tablet"
+							demandPopin="true">
+						<Text text="종료일"/>
+					</Column>
+					<Column
+							minScreenWidth="Tablet"
+							demandPopin="true">
+						<Text text="사용여부"/>
+					</Column>
+					<Column
+							minScreenWidth="Tablet"
+							demandPopin="true">
+						<Text text="IE전용"/>
+					</Column>
+					<Column
+							minScreenWidth="Tablet"
+							demandPopin="true">
+						<Text text="내부직원전용"/>
+					</Column>
+					<Column
+							minScreenWidth="Tablet"
+							demandPopin="true">
+						<Text text="내부IP전용"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="{Name}"/>
+							<Text text="{Name}"/>
+							<Text text="{End}"/>
+	    					<Text text="{Start}}"/>
+							<Text text="{Result}"/>
+							<Text text="{Result}"/>
+							<Text text="{Result}"/>
+							<Text text="{Result}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+            </VBox>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

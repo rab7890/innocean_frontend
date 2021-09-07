@@ -1,0 +1,132 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m" 
+    xmlns:f="sap.f"
+    xmlns:u="sap.ui.unified"
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:core="sap.ui.core" 
+    controllerName="portal.controller.AdminPage" 
+    displayBlock="true"
+>
+	<f:DynamicPage id="page">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="기본정보관리"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+            <f:content>
+                <form:Form width="auto" editable="true" visible="true" class="sapUiResponsiveMargin">
+                  <form:layout>
+                        <form:ResponsiveGridLayout 
+                            labelSpanXL="2"
+                            labelSpanL="2"
+                            labelSpanM="2"
+                            labelSpanS="6"
+                            adjustLabelSpan="false"
+                            emptySpanXL="5"
+                            emptySpanL="2"
+                            emptySpanM="2"
+                            emptySpanS="0"
+                            singleContainerFullSize="true"/>
+                        </form:layout>
+                        <form:formContainers>
+                            <form:FormContainer visible="true">
+                                <form:formElements>
+                                    <form:FormElement visible="true" class="sapUiResponsiveMargin">
+                                        <form:label>
+                                            <Label text="사이트명" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Input id="Input1" value="업무 포탈" enabled="true" visible="true" width="auto" required="true" valueStateText="Invalid entry" maxLength="20"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement visible="true" class="sapUiResponsiveMargin">
+                                        <form:label>
+                                            <Label text="운영모드" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Select width="30%">
+								                <core:Item text="일반모드"/>
+								                <core:Item text="운영모드"/>
+                                            </Select>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement visible="true" class="sapUiResponsiveMargin">
+                                        <form:label>
+                                            <Label text="로고 이미지" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Image src="image/logo.png"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement visible="true" class="sapUiResponsiveMargin">
+                                        <form:label>
+                                            <Label text="" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+		                            <u:FileUploader
+            	                		id="fileUploader"
+		            	                name="myFileUpload"
+		                	            uploadUrl="upload/"
+		                    	        tooltip="Upload your file to the local server"
+                             			uploadComplete="handleUploadComplete"
+                            			change="handleValueChange"
+                            			typeMissmatch="handleTypeMissmatch"
+                            			style="Emphasized"
+                            			fileType="png,jpg"
+                             			placeholder="이미지를 선택하세요...">
+                        				<u:parameters>
+                        					<u:FileUploaderParameter
+                        						name="Accept-CH"
+                        						value="Viewport-Width"/>
+                            				<u:FileUploaderParameter
+        	                    				name="Accept-CH"
+        	                    				value="Width"/>
+        	                				<u:FileUploaderParameter
+        	                    					name="Accept-CH-Lifetime"
+        	                    					value="86400"/>
+                            				</u:parameters>
+                            			</u:FileUploader>
+                                    </form:FormElement>
+                                    <form:FormElement visible="true" class="sapUiResponsiveMargin">
+                                        <form:label>
+                                            <Label text="" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Text text="* 로고 이미지의 크기 (가로 * 세로) 170px * 40px"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement visible="true" class="sapUiResponsiveMargin">
+                                        <form:label>
+                                            <Label text="관리자 전화번호" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Input id="Input3" value="02-1234-5678" enabled="true" visible="true" width="auto" required="true" valueStateText="Invalid entry" maxLength="20"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement visible="true" class="sapUiResponsiveMargin">
+                                        <form:label>
+                                            <Label text="관리자 이메일" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Input id="Input4" value="innocean@innocean.com" enabled="true" visible="true" width="auto" required="true" valueStateText="Invalid entry" maxLength="20"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement visible="true">
+                                        <form:label>
+                                            <Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="false"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Label text="Label" design="Standard" width="auto" visible="false"/>
+                                            <Label text="Label" design="Standard" width="auto" visible="false"/>
+                                            <Button text="저장" type="Emphasized" width="auto"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                </form:formElements>
+                            </form:FormContainer>
+                        </form:formContainers>
+                    </form:Form>
+                </f:content>
+	</f:DynamicPage>
+</mvc:View>

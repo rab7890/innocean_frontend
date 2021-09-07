@@ -1,0 +1,108 @@
+<mvc:View xmlns:tnt="sap.tnt" 
+    xmlns="sap.m" 
+    xmlns:f="sap.f" 
+    xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    controllerName="portal.controller.AdminMenu">
+	
+    <f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="대메뉴 관리"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+        
+            <f:header>
+				<f:DynamicPageHeader pinnable="false">
+					<f:content>
+                        <VBox>
+					        <Text text="* 업무포탈 타일 관리 화면입니다."/>
+					        <Text text="* 업무포탈 타일 관리 화면입니다."/>
+					        <Text text="* 업무포탈 타일 관리 화면입니다."/>
+                        </VBox>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+		    <f:content>
+				<Table id="MenuTable" inset="false" items="{ path: '/Menu', sorter: { path: 'Rank'}}" class="sapFDynamicPageAlignContent" width="auto">
+					<columns>
+                        <Column>
+				            <Text text="한글 제목" width="auto"/>
+			            </Column>
+						<Column>
+							<Text text="영문 제목" width="auto"/>
+						</Column>
+						<Column>
+							<Text text="정렬 순서" width="auto"/>
+						</Column>
+						<Column>
+							<Text text="URL" width="auto"/>
+						</Column>
+						<Column>
+							<Text text="새창 여부" width="auto"/>
+						</Column>
+						<Column>
+							<Text text="보안모드 적용" width="auto"/>
+						</Column>
+						<Column>
+							<Text text="SSO 적용" width="auto"/>
+						</Column>
+						<Column>
+							<Text text="사용 여부" width="auto"/>
+						</Column>
+						<Column>
+							<Text text="IE전용" width="auto"/>
+						</Column>
+						<Column>
+							<Text text="내부직원 전용"/>
+						</Column>
+						<Column>
+							<Text text=""/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem press=".onListItemPress">
+							<cells>
+					            <Input value="{Korean}" width="5rem"/>
+					            <Input value="{English}" width="5rem"/>
+					            <Input value="{Rank}" width="5rem"/>
+					            <Input value="{Url}" width="5rem"/>
+							    <!--<Select selectedKey="{Category}" items="{/Menu}">
+								    <core:Item text="{Yes}" key="{Name}"/>
+								    <core:Item text="{No}" key="{Name}"/>
+							    </Select>-->
+							    <Select>
+								    <core:Item text="Yes"/>
+								    <core:Item text="No"/>
+							    </Select>
+							    <Select>
+								    <core:Item text="Yes"/>
+								    <core:Item text="No"/>
+							    </Select>
+							    <Select>
+								    <core:Item text="Yes"/>
+								    <core:Item text="No"/>
+							    </Select>
+							    <Select>
+								    <core:Item text="Yes"/>
+								    <core:Item text="No"/>
+							    </Select>
+							    <Select>
+								    <core:Item text="Yes"/>
+								    <core:Item text="No"/>
+							    </Select>
+							    <Select>
+								    <core:Item text="Yes"/>
+								    <core:Item text="No"/>
+							    </Select>
+                                <Button text="변경"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

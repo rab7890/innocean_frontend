@@ -1,0 +1,83 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m" 
+    xmlns:f="sap.f"
+    xmlns:u="sap.ui.unified"
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:core="sap.ui.core" 
+    controllerName="portal.controller.Profile" 
+    displayBlock="true"
+>
+	<f:DynamicPage id="page">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="프로필 정보"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+            <f:content>
+                <form:Form width="auto" editable="true" visible="true" class="sapUiResponsiveMargin">
+                  <form:layout>
+                        <form:ResponsiveGridLayout 
+                            labelSpanXL="2"
+                            labelSpanL="2"
+                            labelSpanM="2"
+                            labelSpanS="6"
+                            adjustLabelSpan="false"
+                            emptySpanXL="5"
+                            emptySpanL="2"
+                            emptySpanM="2"
+                            emptySpanS="0"
+                            singleContainerFullSize="true"/>
+                        </form:layout>
+                        <form:formContainers>
+                            <form:FormContainer visible="true">
+                                <form:formElements>
+                                    <form:FormElement visible="true" class="sapUiResponsiveMargin">
+                                        <form:label>
+                                            <Label text="사원번호" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Input id="Input1" value="12345" enabled="true" visible="true" width="auto" editable="false" required="true" valueStateText="Invalid entry" maxLength="20"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement visible="true" class="sapUiResponsiveMargin">
+                                        <form:label>
+                                            <Label text="성명" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Input id="Input2" value="김현근" enabled="true" visible="true" width="auto" editable="false" required="true" valueStateText="Invalid entry" maxLength="20"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement visible="true" class="sapUiResponsiveMargin">
+                                        <form:label>
+                                            <Label text="사무실 전화" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Input id="Input3" value="02-1234-5678" type="Tel" enabled="true" editable="false" visible="true" width="auto" required="true" valueStateText="Invalid entry" maxLength="20"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement visible="true" class="sapUiResponsiveMargin">
+                                        <form:label>
+                                            <Label text="핸드폰" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Input id="Input4" value="010-1234-5678" type="Tel" enabled="true" editable="false" visible="true" width="auto" required="true" valueStateText="Invalid entry" maxLength="20"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement visible="true" class="sapUiResponsiveMargin">
+                                        <form:label>
+                                            <Label text="이메일" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </form:label>
+                                        <form:fields>
+                                            <Input id="Input5" value="innocean@innocean.com"  type="Email" editable="false" enabled="true" visible="true" width="auto" required="true" valueStateText="Invalid entry" maxLength="20"/>
+                                        </form:fields>
+                                    </form:FormElement>
+                                </form:formElements>
+                            </form:FormContainer>
+                        </form:formContainers>
+                    </form:Form>
+                </f:content>
+	</f:DynamicPage>
+</mvc:View>

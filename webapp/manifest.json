@@ -1,0 +1,453 @@
+{
+  "_version": "1.32.0",
+  "sap.app": {
+    "id": "portal",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "ach": "ach"
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "sap-icon://task",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+
+  "sap.ui5": {
+    "flexEnabled": false,
+    "rootView": {
+      "viewName": "portal.view.Login",
+      "type": "XML",
+      "async": true,
+      "id": "Login"
+    },
+    "dependencies": {
+      "minUI5Version": "1.66.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.ui.layout": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "portal.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "portal.view",
+        "controlAggregation": "pages",
+        "controlId": "app"
+      },
+      "routes": [
+        {
+          "name": "Login",
+          "pattern": "Login",
+          "target": ["Login"]
+        },
+        {
+          "name": "Main",
+          "pattern": "Main",
+          "target": ["Main"]
+        },
+        {
+          "name": "Anchor",
+          "pattern": "Anchor",
+          "target": ["Anchor"]
+        },
+        {
+          "name": "Notice",
+          "pattern": "Notice",
+          "target": ["Notice"]
+        },
+        {  
+          "name": "Faq",
+          "pattern": "Faq",
+          "target": ["Faq"]
+        },
+        {
+          "name": "Admin",
+          "pattern": "Admin",
+          "target": ["Admin"]
+        },
+        {
+          "name": "AdminNotice",
+          "pattern": "AdminNotice",
+          "target": ["AdminNotice"]
+        },
+        {
+          "name": "AdminNotiRegiste",
+          "pattern": "AdminNotiRegiste",
+          "target": ["AdminNotiRegiste"]
+        },
+        {
+          "name": "AdminAccessor",
+          "pattern": "AdminAccessor",
+          "target": ["AdminAccessor"]
+        },
+        {
+          "name": "AdminMenu",
+          "pattern": "AdminMenu",
+          "target": ["AdminMenu"]
+        },
+        {
+          "name": "AdminSystem",
+          "pattern": "AdminSystem",
+          "target": ["AdminSystem"]
+        },
+        {
+          "name": "AdminBatch",
+          "pattern": "AdminBatch",
+          "target": ["AdminBatch"]
+        },
+        {
+          "name": "AdminIp",
+          "pattern": "AdminIp",
+          "target": ["AdminIp"]
+        },
+        {
+          "name": "AdminBatchList",
+          "pattern": "AdminBatchList",
+          "target": ["AdminBatchList"]
+        },
+        {
+          "name": "AdminPopup",
+          "pattern": "AdminPopup",
+          "target": ["AdminPopup"]
+        },
+        {
+          "name": "AdminLoginImage",
+          "pattern": "AdminLoginImage",
+          "target": ["AdminLoginImage"]
+        },
+        {
+          "name": "AdminPage",
+          "pattern": "AdminPage",
+          "target": ["AdminPage"]
+        },
+        {
+          "name": "AdminTileRole",
+          "pattern": "AdminTileRole",
+          "target": ["AdminTileRole"]
+        },
+        {
+          "name": "AdminTileUser",
+          "pattern": "AdminTileUser",
+          "target": ["AdminTileUser"]
+        },
+        {
+          "name": "AdminDailySite",
+          "pattern": "AdminDailySite",
+          "target": ["AdminDailySite"]
+        },
+        {
+          "name": "AdminMobileAccess",
+          "pattern": "AdminMobileAccess",
+          "target": ["AdminMobileAccess"]
+        },
+        {
+          "name": "AdminUserManage",
+          "pattern": "AdminUserManage",
+          "target": ["AdminUserManage"]
+        },
+        {
+          "name": "AdminUseStatus",
+          "pattern": "AdminUseStatus",
+          "target": ["AdminUseStatus"]
+        },
+        {
+          "name": "UserPopover",
+          "pattern": "UserPopover",
+          "target": ["UserPopover"]
+        },
+        {
+          "name": "Bookmark",
+          "pattern": "Bookmark",
+          "target": ["Bookmark"]
+        },
+        {
+          "name": "Profile",
+          "pattern": "Profile",
+          "target": ["Profile"]
+        },
+        {
+          "name": "Password",
+          "pattern": "Password",
+          "target": ["Password"]
+        }
+      ],
+      "targets": {
+        "Login": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "Login",
+          "viewName": "Login",
+          "viewLevel": 0
+        },
+        "Main": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "Main",
+          "viewName": "Main",
+          "viewLevel": 1
+        },
+        "Anchor": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "Anchor",
+          "viewName": "Anchor",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 2
+        },
+        "Notice": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "Notice",
+          "viewName": "Notice",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 2
+        },
+        "Faq": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "Faq",
+          "viewName": "Faq",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 2
+        },
+        "Profile": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "Profile",
+          "viewName": "Profile",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 2
+        },
+        "Password": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "Password",
+          "viewName": "Password",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 2
+        },
+        "Admin": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "Admin",
+          "viewName": "Admin",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 2
+        },
+        "AdminNotice": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AdminNotice",
+          "viewName": "AdminNotice",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 3
+        },
+        "AdminNotiRegiste": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AdminNotiRegiste",
+          "viewName": "AdminNotiRegiste",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 4
+        },
+        "UserPopover": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "UserPopover",
+          "viewName": "UserPopover"
+        },
+        "Bookmark": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "Bookmark",
+          "viewName": "Bookmark",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 2
+        },
+        "AdminAccessor": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AdminAccessor",
+          "viewName": "AdminAccessor",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 3
+        },        
+        "AdminMenu": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AdminMenu",
+          "viewName": "AdminMenu",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 3
+        },        
+        "AdminSystem": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AdminSystem",
+          "viewName": "AdminSystem",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 3
+        },        
+        "AdminBatch": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AdminBatch",
+          "viewName": "AdminBatch",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 3
+        },        
+        "AdminIp": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AdminIp",
+          "viewName": "AdminIp",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 3
+        },        
+        "AdminBatchList": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AdminBatchList",
+          "viewName": "AdminBatchList",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 3
+        },        
+        "AdminPopup": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AdminPopup",
+          "viewName": "AdminPopup",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 3
+        },        
+        "AdminLoginImage": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AdminLoginImage",
+          "viewName": "AdminLoginImage",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 3
+        },        
+        "AdminPage": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AdminPage",
+          "viewName": "AdminPage",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 3
+        },        
+        "AdminTileRole": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AdminTileRole",
+          "viewName": "AdminTileRole",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 3
+        },        
+        "AdminTileUser": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AdminTileUser",
+          "viewName": "AdminTileUser",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 3
+        },        
+        "AdminDailySite": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AdminDailySite",
+          "viewName": "AdminDailySite",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 3
+        },        
+        "AdminMobileAccess": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AdminMobileAccess",
+          "viewName": "AdminMobileAccess",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 3
+        },        
+        "AdminUserManage": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AdminUserManage",
+          "viewName": "AdminUserManage",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 3
+        },        
+        "AdminUseStatus": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AdminUseStatus",
+          "viewName": "AdminUseStatus",
+          "parent": "Main",
+          "controlId": "maincontent",
+          "viewLevel": 3
+        }
+      }
+    }
+  }
+}

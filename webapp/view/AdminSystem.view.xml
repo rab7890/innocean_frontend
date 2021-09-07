@@ -1,0 +1,82 @@
+<mvc:View xmlns:tnt="sap.tnt" 
+    xmlns="sap.m" 
+    xmlns:f="sap.f" 
+    xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    controllerName="portal.controller.AdminSystem">
+	<f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+
+<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="시스템 바로가기"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+            <f:header>
+				<f:DynamicPageHeader pinnable="false">
+					<f:content>
+                    <Text text="* 시스템 링크를 관리합니다."/>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+        
+<!-- DynamicPage Content -->
+		<f:content>
+			<VBox fitContainer="true">
+				<OverflowToolbar class="sapFDynamicPageAlignContent">
+					<ToolbarSpacer/>
+					    <Button text="등록" type="Emphasized" press=".onAdd"/>
+				</OverflowToolbar>
+				<Table id="MenuTable" inset="false" items="{ path: '/Menu', sorter: { path: 'Rank'}}" class="sapFDynamicPageAlignContent" width="auto">
+					<columns>
+                        <Column width="10rem">
+				            <Text text="한글 시스템 명"/>
+			            </Column>
+						<Column width="10rem">
+							<Text text="영문 시스템 명"/>
+						</Column>
+						<Column width="10rem">
+							<Text text="시스템 코드"/>
+						</Column>
+						<Column width="5rem">
+							<Text text="정렬 순서"/>
+						</Column>
+						<Column width="30rem">
+							<Text text="URL"/>
+						</Column>
+						<Column width="3rem">
+							<Text text=""/>
+						</Column>
+						<Column width="3rem">
+							<Text text=""/>
+						</Column>
+						<Column width="3rem">
+							<Text text=""/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem press=".onListItemPress">
+							<cells>
+					            <Input value="{Korean}"/>
+					            <Input value="{English}"/>
+					            <Input value="{Rank}"/>
+					            <Input value="{Rank}"/>
+					            <Input value="{Url}"/>
+							    <!--<Select selectedKey="{Category}" items="{/Menu}">
+								    <core:Item text="{Yes}" key="{Name}"/>
+								    <core:Item text="{No}" key="{Name}"/>
+							    </Select>-->
+                                <Button text="저장" type="Emphasized"/>
+                                <Button text="삭제" type="Emphasized"/>
+                                <Button text="메뉴" type="Emphasized"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+            </VBox>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

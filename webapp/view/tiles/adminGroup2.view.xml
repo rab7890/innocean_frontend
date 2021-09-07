@@ -1,0 +1,87 @@
+<mvc:View 
+	controllerName="portal.controller.tiles.adminGroup2"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    height="100%" 
+    displayBlock="true">
+
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="공지사항 관리" 
+		press="press1" frameType= "OneByOne">
+        <TileContent>
+            <ImageContent src="sap-icon://activities" />
+        </TileContent>
+	</GenericTile>
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="FAQ 관리"
+		press="press2" frameType= "OneByOne">
+        <TileContent>
+            <ImageContent src="sap-icon://activities" />
+        </TileContent>
+	</GenericTile>
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="현재 접속자 관리"
+		press="press3" frameType= "OneByOne">
+        <TileContent>
+            <ImageContent src="sap-icon://activities" />
+        </TileContent>
+	</GenericTile>
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="대메뉴 관리"
+		press="press4" frameType= "OneByOne">
+        <TileContent>
+            <ImageContent src="sap-icon://activities" />
+        </TileContent>
+	</GenericTile>
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="시스템 바로가기"
+		press="press5" frameType= "OneByOne">
+        <TileContent>
+            <ImageContent src="sap-icon://activities" />
+        </TileContent>
+	</GenericTile>
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="배치작업 목록"
+		press="press6" frameType= "OneByOne">
+        <TileContent>
+            <ImageContent src="sap-icon://activities" />
+        </TileContent>
+	</GenericTile>
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="내부IP 관리"
+		press="press7" frameType= "OneByOne">
+        <TileContent>
+            <ImageContent src="sap-icon://activities" />
+        </TileContent>
+	</GenericTile>
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="배치작업 처리 내역"
+		press="press8" frameType= "OneByOne">
+        <TileContent>
+            <ImageContent src="sap-icon://activities" />
+        </TileContent>
+	</GenericTile>
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="팝업 관리"
+		press="press9" frameType= "OneByOne">
+        <TileContent>
+            <ImageContent src="sap-icon://activities" />
+        </TileContent>
+	</GenericTile>
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="로그인 배경관리"
+		press="press10" frameType= "OneByOne">
+        <TileContent>
+            <ImageContent src="sap-icon://activities" />
+        </TileContent>
+	</GenericTile>
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="기본정보관리"
+		press="press11" frameType= "OneByOne">
+        <TileContent>
+            <ImageContent src="sap-icon://activities" />
+        </TileContent>
+	</GenericTile>
+
+</mvc:View>

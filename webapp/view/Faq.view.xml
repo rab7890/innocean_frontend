@@ -1,0 +1,58 @@
+<mvc:View
+	controllerName="portal.controller.Faq"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:mvc="sap.ui.core.mvc">
+	<f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+		<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="Faq"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+
+		<!-- DynamicPage Content -->
+		<f:content>
+			<VBox fitContainer="true">
+				<OverflowToolbar class="sapFDynamicPageAlignContent">
+					<ToolbarSpacer/>
+					<SearchField search=".onSearch" width="17.5rem"/>
+					<OverflowToolbarButton icon="sap-icon://sort" text="Sort" type="Transparent" press=".onSort"/>
+				</OverflowToolbar>
+				<Table
+					id="faqlist"
+					inset="false"
+					items="{ path: '/Faq',
+			                sorter: {
+			                	path: 'Name'
+			                    }
+					        }"
+					class="sapFDynamicPageAlignContent"
+					width="auto">
+					<columns>
+						<Column width="20%">
+							<Text text="입력 일자"/>
+						</Column>			
+                        <Column width="20%">
+				            <Text text="작성자" />
+			            </Column>
+						<Column	width="60%">
+							<Text text="문의 내용"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Navigation" press=".onListItemPress">
+							<cells>
+								<ObjectIdentifier title="{Date}"/>
+					            <Text text="{Name}" />
+					            <Text text="{Title}" />
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

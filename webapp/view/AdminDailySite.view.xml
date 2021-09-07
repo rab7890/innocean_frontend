@@ -1,0 +1,108 @@
+<mvc:View 
+    xmlns="sap.m" 
+    xmlns:f="sap.f" 
+    xmlns:form="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    controllerName="portal.controller.AdminDailySite">
+	<f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+
+<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="일별 사이트 현황"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+        
+<!-- DynamicPage Content -->
+
+            <f:header>
+				<f:DynamicPageHeader pinnable="true">
+					<f:content>
+                        <Text text="* 현재 사이트 현황과 일별 사이트 사용현황을 조회하고, 엑셀로 다운로드 할 수 있습니다."/>
+                        <VBox>  
+                            <form:SimpleForm width="auto" class="sapUiResponsiveMargin" layout="ResponsiveGridLayout" editable="true"
+                        		labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1" title="사이트 현황"  >
+		                        <form:content>
+		                                <Label text="> 직원 수" width="25%" textAlign="Left"/>
+                                        <Text text= "2782명" textAlign="Left"/>
+
+		                                <Label text="> 외부사용자" width="25%" textAlign="Left"/>
+                                        <Text text= "43명" />
+
+		                                <Label text="> 커뮤니티" width="25%" textAlign="Left"/>
+                                        <Text text= "115개" />
+		                        </form:content>        
+	                        </form:SimpleForm>
+
+
+                            <form:SimpleForm width="auto" class="sapUiResponsiveMargin" layout="ResponsiveGridLayout" editable="true"
+                        		labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1" title="일별 사이트 사용 현황"  >
+		                        <form:content>
+             	                        <Text text="기간" width="auto" textAlign="Left"/>
+			                            <DatePicker dateValue="{/date}"/>
+                                        <Button type="Emphasized" text="검색" press="button1" width="70px" />
+                                </form:content>
+                            </form:SimpleForm>
+                        </VBox>
+                    </f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+
+		<f:content>
+			<VBox fitContainer="true">
+				<OverflowToolbar class="sapFDynamicPageAlignContent">
+					<ToolbarSpacer/>
+					    <Button text="엑셀 저장" type="Emphasized" press=".onAdd"/>
+				</OverflowToolbar>
+				<Table id="DailySiteTable" inset="false" items="{ path: '/DailySite', sorter: { path: 'Date'}}" class="sapFDynamicPageAlignContent"  width="auto">
+					<columns>
+						<Column>
+							<Text text="일자"/>
+						</Column>			
+                        <Column>
+				            <Text text="총접속(로그인 기준)"/>
+			            </Column>
+						<Column>
+							<Text text="모바일접속(로그인 기준)"/>
+						</Column>
+						<Column>
+							<Text text="내부접속(접속IP,로그인 기준)"/>
+						</Column>
+						<Column>
+							<Text text="외부접속(접속IP,로그인 기준)"/>
+						</Column>
+						<Column>
+							<Text text="피드수"/>
+						</Column>
+						<Column>
+							<Text text="댓글수"/>
+						</Column>
+                        <Column>
+							<Text text="추천수"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem press=".onListItemPress">
+							<cells>
+                            
+					            <Text text="{Date}"/>
+					            <Text text="{TotalLogin}"/>
+					            <Text text="{PC}"/>
+					            <Text text="{Mobile}"/>
+					            <Text text="{Inner}"/>
+					            <Text text="{Outer}"/>
+					            <Text text="{Feed}"/>
+                                <Text text="{Answer}"/>
+                                <Text text="{Favorite}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+            </VBox>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

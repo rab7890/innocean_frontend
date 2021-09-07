@@ -1,0 +1,48 @@
+{
+  "tile": [
+    {
+      "name": "타임관리",
+      "icon": "sap-icon://appointment",
+      "content": [
+        {
+          "TileId": "tile1",
+          "Name": "타임 등록"
+        },
+        {
+          "TileId": "tile2",
+          "Name": "타임 승인"
+        }
+      ]
+    },
+    {
+      "name": "기준정보 및 경쟁 PT 관리",
+      "icon": "sap-icon://appointment",
+      "content": [
+        {
+          "TileId": "tile3",
+          "Name": "광고주 관리"
+        },
+        {
+          "TileId": "tile4",
+          "Name": "브랜드 관리"
+        },
+        {
+          "TileId": "tile5",
+          "Name": "경쟁PT 등록"
+        },
+        {
+          "TileId": "tile6",
+          "Name": "경쟁PT 준비"
+        },
+        {
+          "TileId": "tile7",
+          "Name": "경쟁PT 수행"
+        },
+        {
+          "TileId": "tile8",
+          "Name": "경쟁PT 종료"
+        }
+      ]
+    }
+  ]
+}

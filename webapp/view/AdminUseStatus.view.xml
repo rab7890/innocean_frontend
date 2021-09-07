@@ -1,0 +1,178 @@
+<mvc:View 
+    xmlns:tnt="sap.tnt" 
+    xmlns="sap.m" 
+    xmlns:f="sap.f" 
+    xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+	xmlns:fb="sap.ui.comp.filterbar"
+    controllerName="portal.controller.AdminUseStatus">
+
+
+
+	<f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+
+<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="사용내역(로그) 검색"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+        
+<!-- DynamicPage Content -->
+		<f:header>
+			
+            <f:DynamicPageHeader pinnable="true">
+					<f:content>
+						<fb:FilterBar id="filterbar" reset="onReset" search="onSearch" useToolbar="false" showGoOnFB="false" showFilterConfiguration="false">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem groupName="group1" name="A" label="분류" visibleInFilterBar="true">
+									<fb:control>
+										<Select
+										id="seUrl"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Usedlog'
+                                                }">
+										<core:Item key="{key}" text="{Url}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterGroupItem>								
+								<fb:FilterGroupItem  groupName="group2" name="B" label="카테고리" visibleInFilterBar="true">
+									<fb:control>
+										<Select
+										id="seCatagory"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Usedlog'
+                                                 }">
+										<core:Item key="{key}" text="{Category}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterGroupItem>		
+				<fb:FilterGroupItem groupName="group3" name="C" label="메뉴명" partOfCurrentVariant="true" visibleInFilterBar="true">
+					<fb:control>
+							<Select
+										id="seMenu"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Usedlog'
+                                                 }">
+										<core:Item key="{key}" text="{Menu}"/>
+										</Select>
+					</fb:control>
+				</fb:FilterGroupItem>
+				
+                            <fb:FilterGroupItem groupName="group4" name="C" label="성명" partOfCurrentVariant="true" visibleInFilterBar="true">
+					<fb:control>
+							<Select
+										id="seName"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Usedlog'
+                                                 }">
+										<core:Item key="{key}" text="{Name}"/>
+										</Select>
+					</fb:control>
+				</fb:FilterGroupItem>
+							
+                            <fb:FilterGroupItem groupName="group5" name="C" label="기간" partOfCurrentVariant="true" visibleInFilterBar="true">
+					<fb:control>
+							<DatePicker change="onChange"/>	
+					</fb:control>
+				</fb:FilterGroupItem>
+							
+                            <fb:FilterGroupItem groupName="group6" name="C" label="직원여부" partOfCurrentVariant="true" visibleInFilterBar="true">
+					<fb:control>
+							<Select
+										id="seTime"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Usedlog'
+                                                 }">
+										<core:Item key="{key}" text="{Employee}"/>
+										</Select>
+					</fb:control>
+				</fb:FilterGroupItem>
+							
+                            <fb:FilterGroupItem groupName="group7" name="C" label="접속기기구분" partOfCurrentVariant="true" visibleInFilterBar="true">
+					<fb:control>
+							<Select
+										id="seConnectItem"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Usedlog'
+                                                 }">
+										<core:Item key="{key}" text="{TypeIP}"/>
+										</Select>
+					</fb:control>
+				</fb:FilterGroupItem>
+							
+                            <fb:FilterGroupItem groupName="group8" name="C" label="외부접속구분" partOfCurrentVariant="true" visibleInFilterBar="true">
+					<fb:control>
+							<Select
+										id="se"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Usedlog'
+                                                 }">
+										<core:Item key="{key}" text="{OutSide}"/>
+										</Select>
+					</fb:control>
+				</fb:FilterGroupItem>
+					</fb:filterGroupItems>		
+							
+						</fb:FilterBar>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+            
+				<f:content>
+              
+	                
+				    
+				<Table id="AdminUseStatus" inset="false" items="{ path: '/Usedlog', sorter: { path: 'Date'}}" class="sapFDynamicPageAlignContent" width="auto">
+					<columns>
+						<Column>
+							<Text text="일시"/>
+						</Column>			
+                        <Column>
+				            <Text text="성명/영문명"/>
+			            </Column>
+						<Column>
+							<Text text="로그인ID"/>
+						</Column>
+						<Column>
+							<Text text="분류/메뉴명 접속URL"/>
+						</Column>
+						<Column>
+							<Text text="접속구분/접속IP"/>
+						</Column>
+						<Column>
+							<Text text="권한변경"/>
+						</Column>
+						<Column>
+							<Text text="다운로드파일명"/>
+						</Column>
+                        
+					</columns>
+					<items>
+						<ColumnListItem press=".onListItemPress">
+							<cells>                          
+					            <Text text="{Datetime}"/>
+					            <Text text="{Name}"/>
+					            <Text text="{LoginID}"/>
+					            <Text text="{Url}"/>
+					            <Text text="{TypeIP}"/>
+					            <Text text="{Authority}"/>
+					            <Text text="{DownLoadFile}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

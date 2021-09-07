@@ -1,0 +1,40 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:l="sap.ui.layout"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:u="sap.uxap"
+    controllerName="portal.controller.Anchor"
+    displayBlock="true"
+    height="100%">
+    <App>
+        <Page showHeader="false">
+            <content>
+                <u:ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false" showHeaderContent="false" sections="{path:'result>/tile'}">
+                    <u:sections>
+                        <u:ObjectPageSection titleUppercase="false" id="section1" title="{path:'result>anchorbar_code_text'}">
+                            <u:subSections>
+                                <u:ObjectPageSubSection titleUppercase="false">
+                                        <FlexBox width="100%" items="{path:'result>tiles'}">
+                                            <items>
+                                                <GenericTile header="{path:'result>tile_code_text'}"
+                                                        subheader="{path:'result>tile_code_text'}"
+                                                        press="press"
+                                                        frameType="OneByOne"
+                                                        class="sapUiTinyMarginBegin sapUiTinyMarginEnd">
+                                                <TileContent>
+                                                    <ImageContent src="sap-icon://activities"/>
+                                                </TileContent>
+                                                </GenericTile>
+                                            </items>
+                                        </FlexBox>
+                                </u:ObjectPageSubSection>
+                            </u:subSections>
+                        </u:ObjectPageSection>
+                    </u:sections>
+                </u:ObjectPageLayout>
+            </content>
+        </Page>
+    </App>
+</mvc:View>

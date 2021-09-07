@@ -1,0 +1,60 @@
+<mvc:View
+	controllerName="portal.controller.Notice"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:mvc="sap.ui.core.mvc">
+
+	<f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+
+<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="공지사항"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+
+<!-- DynamicPage Content -->
+		<f:content>
+			<VBox fitContainer="true">
+				<OverflowToolbar class="sapFDynamicPageAlignContent">
+					<ToolbarSpacer/>
+					    <SearchField search=".onSearch" width="17.5rem"/>
+					    <OverflowToolbarButton icon="sap-icon://sort" text="Sort" type="Transparent" press=".onSort"/>
+				</OverflowToolbar>
+				<Table
+					id="noticelist"
+					inset="false"
+					items="{ path: '/Notice',
+			                sorter: {
+			                	path: 'Name'
+			                    }
+					        }"
+					class="sapFDynamicPageAlignContent"
+					width="auto">
+					<columns>
+						<Column width="30%">
+							<Text text="공지사항"/>
+						</Column>			
+                        <Column width="30%">
+				            <Text text="작성자" />
+			            </Column>
+						<Column	hAlign="End">
+							<Text text="날짜"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Navigation" press=".onListItemPress">
+							<cells>
+								<ObjectIdentifier title="{Title}"/>
+					            <Text text="{Name}" />
+					            <Text text="{Date}" />
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

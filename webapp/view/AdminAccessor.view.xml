@@ -1,0 +1,132 @@
+<mvc:View 
+    xmlns="sap.m" 
+    xmlns:f="sap.f" 
+    xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:vm="sap.ui.comp.variants"
+    controllerName="portal.controller.AdminAccessor">
+
+	<f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+    
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="현재 접속자 관리"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+
+			<f:header>
+				<f:DynamicPageHeader pinnable="true">
+					<f:content>
+						<fb:FilterBar id="filterbar" reset="onReset" search="onSearch" useToolbar="false" showGoOnFB="false" showFilterConfiguration="false">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem groupName="group1" name="A" label="조직" visibleInFilterBar="true">
+									<fb:control>
+										<Select
+										id="slName"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Accessor'
+                                                }">
+										<core:Item key="{key}" text="{Department}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterGroupItem>								
+								<fb:FilterGroupItem  groupName="group2" name="B" label="접속기기구분" visibleInFilterBar="true">
+									<fb:control>
+										<Select
+										id="slResult"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Accessor'
+                                                 }">
+										<core:Item key="{key}" text="{Connect}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterGroupItem>
+                                <fb:FilterGroupItem  groupName="group3" name="C" label="성명" visibleInFilterBar="true">
+									<fb:control>
+                                        <Input value="{Name}"/>
+									</fb:control>				
+								</fb:FilterGroupItem>								
+								<fb:FilterGroupItem  groupName="group4" name="D" label="직원여부" visibleInFilterBar="true">
+									<fb:control>
+										<Select
+										id="slResult2"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Accessor'
+                                                 }">
+										<core:Item key="{key}" text="{Position}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterGroupItem>								
+								<fb:FilterGroupItem  groupName="group5" name="E" label="외부접속구분" visibleInFilterBar="true">
+									<fb:control>
+										<Select
+										id="slResult3"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Accessor'
+                                                 }">
+										<core:Item key="{key}" text="{Number}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterGroupItem>	
+							</fb:filterGroupItems>
+						</fb:FilterBar>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+	        <f:content>
+			<VBox fitContainer="true">
+				<OverflowToolbar class="sapFDynamicPageAlignContent">
+					<ToolbarSpacer/>
+					    <Button text="사용불가" type="Emphasized"/>
+					    <Button text="접속해제" type="Emphasized"/>
+				</OverflowToolbar>
+				<Table id="AccessorTable" inset="false" items="{ path: '/Accessor', sorter: { path: 'Date'}}" class="sapFDynamicPageAlignContent" mode="SingleSelectLeft" width="auto">
+                    <columns>
+						<Column >
+							<Text text="로그인 일시"/>
+						</Column>			
+                        <Column>
+				            <Text text="성명/영문명"/>
+			            </Column>
+						<Column>
+							<Text text="사번"/>
+						</Column>
+						<Column>
+							<Text text="부서"/>
+						</Column>
+						<Column>
+							<Text text="직위/직책"/>
+						</Column>
+						<Column>
+							<Text text="접속구분"/>
+						</Column>
+						<Column>
+							<Text text="접속IP"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem press=".onListItemPress">
+							<cells>
+					            <Text text="{Date}"/>
+					            <Text text="{Name}"/>
+					            <Text text="{Number}"/>
+					            <Text text="{Department}"/>
+					            <Text text="{Position}"/>
+					            <Text text="{Connect}"/>
+					            <Text text="{Ip}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+            </VBox>
+		</f:content>
+    </f:DynamicPage>
+</mvc:View>

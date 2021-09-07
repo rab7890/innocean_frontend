@@ -1,0 +1,68 @@
+[
+	{
+		"text": "코드관리",
+		"ref": "sap-icon://attachment-audio",
+		"nodes":
+		[
+			{
+				"text": "가입승인 여부",
+				"ref": "sap-icon://attachment-e-pub",
+				"nodes":[
+					{
+						"text": "승인 후 가입",
+						"ref": "sap-icon://attachment-html"
+					},
+					{
+						"text": "즉시 가입",
+						"ref": "sap-icon://attachment-photo",
+						"nodes":[
+							{
+								"text": "가입신청 받지 않음",
+								"ref": "sap-icon://attachment-text-file",
+								"nodes":[
+									{
+										"text": "소셜 활동 이력 코드",
+										"ref": "sap-icon://attachment-video"
+									},
+									{
+										"text": "전자 결재 이력 코드",
+										"ref": "sap-icon://attachment-zip-file"
+									},
+									{
+										"text": "관리자권한 코드",
+										"ref": "sap-icon://course-program"
+                                    },
+                                    {
+										"text": "회원 관리",
+										"ref": "sap-icon://course-program"
+                                    },
+                                    {
+										"text": "적용 여부 선택코드",
+										"ref": "sap-icon://course-program"
+                                    },
+                                    {
+										"text": "권한 그룹 코드",
+										"ref": "sap-icon://course-program"
+                                    },
+                                    {
+										"text": "관리자권한 코드",
+										"ref": "sap-icon://course-program"
+                                    },
+                                    {
+										"text": "관리자권한 코드",
+										"ref": "sap-icon://course-program"
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"text": "피드유형",
+				"ref": "sap-icon://create"
+			}
+		]
+	}
+
+]

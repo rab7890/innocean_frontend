@@ -1,0 +1,14 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Popover
+		id="myPopover" showHeader="false" placement="Bottom" class="sapMOTAPopover sapTntToolHeaderPopover">
+        <content>
+		    <Button text="프로필 수정" type="Transparent" press=".onButton1"/>
+		    <Button text="비밀번호 초기화" type="Transparent" press=".onButton2"/>
+		    <Button text="사용불가 처리" type="Transparent" press=".onButton3"/>
+		    <Button text="권한 관리" type="Transparent" press=".onButton4"/>
+		    <Button text="사용자로 로그인" type="Transparent" press=".onButton5"/>
+        </content>
+	</Popover>
+</core:FragmentDefinition>

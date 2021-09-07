@@ -1,0 +1,142 @@
+<mvc:View 
+     xmlns:tnt="sap.tnt" 
+    xmlns="sap.m" 
+    xmlns:f="sap.f" 
+    xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+	xmlns:fb="sap.ui.comp.filterbar"
+    controllerName="portal.controller.AdminMobileAccess">
+		<f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+
+<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="모바일 기기 접속 관리"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+        
+<!-- DynamicPage Content -->
+		<f:header>
+			
+            <f:DynamicPageHeader pinnable="false">
+					<f:content>
+						<fb:FilterBar id="filterbar" reset="onReset" search="onSearch" useToolbar="false" showGoOnFB="false" showFilterConfiguration="false">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem groupName="group1" name="A" label="조직" visibleInFilterBar="true">
+									<fb:control>
+										<Select
+										id="seUrl"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Mobile'
+                                                }">
+										<core:Item key="{key}" text="{Dempartment}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterGroupItem>								
+								<fb:FilterGroupItem  groupName="group2" name="B" label="성명" visibleInFilterBar="true">
+									<fb:control>
+										<Select
+										id="seCatagory"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Mobile'
+                                                 }">
+										<core:Item key="{key}" text="{Name}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterGroupItem>		
+				<fb:FilterGroupItem groupName="group3" name="C" label="기기구분" partOfCurrentVariant="true" visibleInFilterBar="true">
+					<fb:control>
+							<Select
+										id="seMenu"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Mobile'
+                                                 }">
+										<core:Item key="{key}" text="{Device}"/>
+										</Select>
+					</fb:control>
+				</fb:FilterGroupItem>
+				
+                            <fb:FilterGroupItem groupName="group4" name="C" label="직원 여부" partOfCurrentVariant="true" visibleInFilterBar="true">
+					<fb:control>
+							<Select
+										id="seName"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Mobile'
+                                                 }">
+										<core:Item key="{key}" text="{Employee}"/>
+										</Select>
+					</fb:control>
+				</fb:FilterGroupItem>
+							
+                                
+					</fb:filterGroupItems>		
+							
+						</fb:FilterBar>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+            
+				<f:content>
+              
+			<VBox fitContainer="true">
+				<OverflowToolbar class="sapFDynamicPageAlignContent">
+					<ToolbarSpacer/>
+					    <Button text="삭제" type="Emphasized" press=".onAdd"/>
+				</OverflowToolbar>
+	             <Table id="AdminMobileAccess" inset="false" items="{ path: '/Mobile', sorter: { path: 'Name'}}" class="sapFDynamicPageAlignContent" mode="MultiSelect" width="auto">
+					
+                    <columns>
+								
+                        <Column>
+				            <Text text="성명/영문명"/>
+			            </Column>
+						<Column>
+							<Text text="사번"/>
+						</Column>
+						<Column>
+							<Text text="부서"/>
+						</Column>
+						<Column>
+							<Text text="내외부구분"/>
+						</Column>
+						<Column>
+							<Text text="직위/직책"/>
+						</Column>
+						<Column>
+							<Text text="기기종류"/>
+						</Column>
+                        <Column>
+							<Text text="기기인증일시"/>
+						</Column>
+                        <Column>
+							<Text text="인증번호"/>
+						</Column>
+                      
+                        
+					</columns>
+					<items>
+						<ColumnListItem press=".onListItemPress">
+							<cells>                          
+					            <Text text="{Name}"/>
+					            <Text text="{UserID}"/>
+					            <Text text="{Dempartment}"/>
+					            <Text text="{Divide}"/>
+                                <Text text="{Grade}"/>
+					            <Text text="{Device}"/>
+					            <Text text="{ApproveTime}"/>
+					            <Text text="{ApproveNum}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>
