@@ -1,0 +1,77 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:l="sap.ui.layout"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:u="sap.uxap"
+    controllerName="portal.controller.Anchor"
+    displayBlock="true"
+    height="100%">
+    <App>
+        <Page showHeader="false">
+            <content>
+
+
+				<f:GridList items="{
+				path: 'result>/tile',
+				sorter: {
+					path: 'anchor_code_text',
+					descending: false,
+					group: true
+				}
+			}">
+       <f:customLayout >
+   <grid:GridBoxLayout boxWidth="10%"/>
+</f:customLayout >
+
+
+     <f:GridListItem>
+
+                            <GenericTile header="{path:'result>tile_code_text'}"
+                                                        subheader="{path:'result>tile_code_text'}"
+                                                        press="press"
+                                                        frameType="OneByOne"
+                                                        class="sapUiTinyMarginBegin sapUiTinyMarginEnd">
+                                                <TileContent>
+                                                    <ImageContent src="sap-icon://activities"/>
+                                                </TileContent>
+                                                </GenericTile>
+
+
+
+     </f:GridListItem>
+
+ </f:GridList>
+<List
+		id="ShortProductList"
+		
+		items="{
+				path: 'result>/tile',
+				sorter: {
+					path: 'anchor_code_text',
+					descending: false,
+					group: true
+				}
+		}">
+		<CustomListItem>
+
+
+
+    <GenericTile header="{path:'result>tile_code_text'}"
+                                                        subheader="{path:'result>tile_code_text'}"
+                                                        press="press"
+                                                        frameType="OneByOne"
+                                                        class="sapUiTinyMarginBegin sapUiTinyMarginEnd">
+                                                <TileContent>
+                                                    <ImageContent src="sap-icon://activities"/>
+                                                </TileContent>
+                                                </GenericTile>
+
+
+		</CustomListItem>
+	</List>
+            </content>
+        </Page>
+    </App>
+</mvc:View>
